@@ -1,0 +1,15 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "renovate-bun-npmrc-repro",
+      "dependencies": {
+        "@jsr/std__semver": "1.0.7",
+      },
+    },
+  },
+  "packages": {
+    "@jsr/std__semver": ["@jsr/std__semver@1.0.7", "https://npm.jsr.io/~/11/@jsr/std__semver/1.0.7.tgz", {}, "sha512-/WpDSNegE6lI50L1+VnItLkuuQlZK8e8QbxrjV1sH+3YqiH+sQ/Tx3yYvewkKVVSwcidQUlqSIHSPrhay1zLCg=="],
+  }
+}
