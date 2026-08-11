@@ -21,9 +21,34 @@ Artifact generation then calls `bun.updateArtifacts(packages/app/package.json)` 
 
 This directory mismatch also affects authenticated registries: host-rule credentials written beside the nested package file are invisible to Bun when it runs beside the root lockfile.
 
+Verified against Renovate `main`:
+
+```text
+DEBUG: bun.updateArtifacts(packages/app/package.json)
+DEBUG: Executing command
+       "command": "bun install --ignore-scripts"
+DEBUG: rawExec err
+       "stderr": "... @jsr/std__semver@1.0.8 failed to resolve"
+ WARN: Failed to update lock file
+       "lockfile": "bun.lock"
+DEBUG: No updated lock files in branch
+```
+
 ## Expected behavior
 
 Renovate resolves, writes, and restores `.npmrc` relative to the root `bun.lock`, matching the working directory used for `bun install`. The lockfile update then succeeds without committing `.npmrc` or exposing credentials.
+
+Verified against the pull request head:
+
+```text
+DEBUG: bun.updateArtifacts(packages/app/package.json)
+DEBUG: Writing updated .npmrc file to .npmrc
+DEBUG: exec completed
+       "stdout": "... 2 packages installed"
+       "stderr": "Saved lockfile"
+DEBUG: Updated 1 lock files
+       "updatedArtifacts": ["bun.lock"]
+```
 
 ## How to reproduce
 
