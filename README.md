@@ -68,6 +68,12 @@ pnpm start exKAZUu/renovate-bun-npmrc-repro
 
 Run against Renovate `main` to reproduce `WARN: Failed to update lock file`. Run again on the pull request branch to see `bun.lock` update successfully.
 
+To check out the fix after the failing `main` run:
+
+```bash
+gh pr checkout 45152 --repo renovatebot/renovate
+```
+
 ## Links
 
 - Discussion: https://github.com/renovatebot/renovate/discussions/45208
