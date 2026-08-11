@@ -1,7 +1,5 @@
 {
   "name": "renovate-bun-npmrc-repro",
   "private": true,
-  "dependencies": {
-    "@jsr/std__semver": "1.0.7"
-  }
+  "workspaces": ["packages/*"]
 }

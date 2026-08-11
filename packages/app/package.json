@@ -1,0 +1,7 @@
+{
+  "name": "app",
+  "private": true,
+  "dependencies": {
+    "@jsr/std__semver": "1.0.7"
+  }
+}
